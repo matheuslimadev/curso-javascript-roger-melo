@@ -128,6 +128,9 @@ const winterMessage = 'o inverno está chegando'
 const harryPotterAuthor = 'J.K. Rowling'
 // console.log(harryPotterAuthor.slice(0, harryPotterAuthor.indexOf(' ')))
 
+// ** Correção:
+// console.log(harryPotterAuthor.slice(0, 4))
+
 /*
 14 - Comente o console.log acima, e,
 
@@ -137,7 +140,10 @@ const harryPotterAuthor = 'J.K. Rowling'
 */
 
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
-const realBestMovie = 'E o Oscar de melhor filme vai para: "Moonlight"!'
+// const realBestMovie = 'E o Oscar de melhor filme vai para: "Moonlight"!'
+// ** Correção:
+const realBestMovie = bestMovie.replace('La la land', 'Moonlight')
+
 // console.log(realBestMovie)
 
 /*
@@ -191,7 +197,7 @@ episodes += 4
 - Exiba a "allEpisodes" no console.
 */
 
-const allEpisodes = 'O nº de episódios é: NUMERO_DE_EPISÓDIOS'
+const allEpisodes = 'O nº de episódios é: ' + episodes;
 // console.log(allEpisodes)
 
 /*
@@ -218,8 +224,12 @@ const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da décad
 */
 
 const name = 'walter white'
-let newName = name.replace('w', 'W')
-newName = newName.replace('w', 'W')
+// Fiz:
+// let newName = name.replace('w', 'W')
+// newName = newName.replace('w', 'W')
+// ** Correção:
+let newName = name[0].toUpperCase() + name.slice(1, 6) + ' ' + name[7].toUpperCase() + name.slice(8); // slice passando um argumento, o segundo argumento ele entende que por padrão será até o final da string.
+
 // console.log(newName)
 
 /*
@@ -232,5 +242,5 @@ newName = newName.replace('w', 'W')
 - Exiba a "newName" no console;
 */
 
-newName = `${newName}`
+newName = `${name[0].toUpperCase()}${name.slice(1, 6)} ${name[7].toUpperCase()}${name.slice(8)}`
 console.log(newName)
